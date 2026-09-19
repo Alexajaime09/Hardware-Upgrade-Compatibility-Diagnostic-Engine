@@ -1,0 +1,154 @@
+[
+  {
+    "cpu_id": "intel-i3-14100",
+    "brand": "Intel",
+    "model": "Intel Core i3-14100",
+    "generation": "14th Gen",
+    "cores": 4,
+    "threads": 8,
+    "clock_speed": {
+      "base_ghz": 3.5,
+      "turbo_ghz": 4.7
+    },
+    "cache_mb": 12,
+    "base_tdp_watts": 60,
+    "vpro_support": false,
+    "integrated_graphics": {
+      "model": "Intel UHD Graphics 730",
+      "supports_quicksync": true
+    }
+  },
+  {
+    "cpu_id": "intel-i5-14500",
+    "brand": "Intel",
+    "model": "Intel Core i5-14500",
+    "generation": "14th Gen",
+    "cores": 14,
+    "threads": 20,
+    "clock_speed": {
+      "base_ghz": 2.6,
+      "turbo_ghz": 5.0
+    },
+    "cache_mb": 24,
+    "base_tdp_watts": 65,
+    "vpro_support": true,
+    "integrated_graphics": {
+      "model": "Intel UHD Graphics 770",
+      "supports_quicksync": true
+    }
+  },
+  {
+    "cpu_id": "intel-i5-14600",
+    "brand": "Intel",
+    "model": "Intel Core i5-14600",
+    "generation": "14th Gen",
+    "cores": 14,
+    "threads": 20,
+    "clock_speed": {
+      "base_ghz": 2.7,
+      "turbo_ghz": 5.2
+    },
+    "cache_mb": 24,
+    "base_tdp_watts": 65,
+    "vpro_support": true,
+    "integrated_graphics": {
+      "model": "Intel UHD Graphics 770",
+      "supports_quicksync": true
+    }
+  },
+  {
+    "cpu_id": "intel-i5-14600k",
+    "brand": "Intel",
+    "model": "Intel Core i5-14600K",
+    "generation": "14th Gen",
+    "cores": 14,
+    "threads": 20,
+    "clock_speed": {
+      "base_ghz": 3.5,
+      "turbo_ghz": 5.3
+    },
+    "cache_mb": 24,
+    "base_tdp_watts": 125,
+    "vpro_support": true,
+    "integrated_graphics": {
+      "model": "Intel UHD Graphics 770",
+      "supports_quicksync": true
+    }
+  },
+  {
+    "cpu_id": "intel-i7-14700",
+    "brand": "Intel",
+    "model": "Intel Core i7-14700",
+    "generation": "14th Gen",
+    "cores": 20,
+    "threads": 28,
+    "clock_speed": {
+      "base_ghz": 2.1,
+      "turbo_ghz": 5.4
+    },
+    "cache_mb": 33,
+    "base_tdp_watts": 65,
+    "vpro_support": true,
+    "integrated_graphics": {
+      "model": "Intel UHD Graphics 770",
+      "supports_quicksync": true
+    }
+  },
+  {
+    "cpu_id": "intel-i7-14700k",
+    "brand": "Intel",
+    "model": "Intel Core i7-14700K",
+    "generation": "14th Gen",
+    "cores": 20,
+    "threads": 28,
+    "clock_speed": {
+      "base_ghz": 3.4,
+      "turbo_ghz": 5.6
+    },
+    "cache_mb": 33,
+    "base_tdp_watts": 125,
+    "vpro_support": true,
+    "integrated_graphics": {
+      "model": "Intel UHD Graphics 770",
+      "supports_quicksync": true
+    }
+  },
+  {
+    "cpu_id": "intel-i9-14900-vpro",
+    "brand": "Intel",
+    "model": "Intel Core i9-14900 vPro",
+    "generation": "14th Gen",
+    "cores": 24,
+    "threads": 32,
+    "clock_speed": {
+      "base_ghz": 2.0,
+      "turbo_ghz": 5.8
+    },
+    "cache_mb": 36,
+    "base_tdp_watts": 65,
+    "vpro_support": true,
+    "integrated_graphics": {
+      "model": "Intel UHD Graphics 770",
+      "supports_quicksync": true
+    }
+  },
+  {
+    "cpu_id": "intel-i9-14900k",
+    "brand": "Intel",
+    "model": "Intel Core i9-14900K",
+    "generation": "14th Gen",
+    "cores": 24,
+    "threads": 32,
+    "clock_speed": {
+      "base_ghz": 3.2,
+      "turbo_ghz": 6.0
+    },
+    "cache_mb": 36,
+    "base_tdp_watts": 125,
+    "vpro_support": true,
+    "integrated_graphics": {
+      "model": "Intel UHD Graphics 770",
+      "supports_quicksync": true
+    }
+  }
+]

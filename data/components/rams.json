@@ -1,0 +1,112 @@
+[
+  {
+    "ram_id": "ddr5-8gb-4800-udimm-non-ecc",
+    "form_factor": "UDIMM",
+    "technology": "DDR5",
+    "capacity_gb": 8,
+    "speed_mts": 4800,
+    "ecc_support": false,
+    "voltage_v": 1.1,
+    "pin_count": 288
+  },
+  {
+    "ram_id": "ddr5-16gb-4800-udimm-non-ecc",
+    "form_factor": "UDIMM",
+    "technology": "DDR5",
+    "capacity_gb": 16,
+    "speed_mts": 4800,
+    "ecc_support": false,
+    "voltage_v": 1.1,
+    "pin_count": 288
+  },
+  {
+    "ram_id": "ddr5-16gb-4800-udimm-ecc",
+    "form_factor": "UDIMM",
+    "technology": "DDR5",
+    "capacity_gb": 16,
+    "speed_mts": 4800,
+    "ecc_support": true,
+    "voltage_v": 1.1,
+    "pin_count": 288
+  },
+  {
+    "ram_id": "ddr5-32gb-4800-udimm-non-ecc",
+    "form_factor": "UDIMM",
+    "technology": "DDR5",
+    "capacity_gb": 32,
+    "speed_mts": 4800,
+    "ecc_support": false,
+    "voltage_v": 1.1,
+    "pin_count": 288
+  },
+  {
+    "ram_id": "ddr5-32gb-4800-udimm-ecc",
+    "form_factor": "UDIMM",
+    "technology": "DDR5",
+    "capacity_gb": 32,
+    "speed_mts": 4800,
+    "ecc_support": true,
+    "voltage_v": 1.1,
+    "pin_count": 288
+  },
+  {
+    "ram_id": "ddr5-16gb-5600-udimm-non-ecc",
+    "form_factor": "UDIMM",
+    "technology": "DDR5",
+    "capacity_gb": 16,
+    "speed_mts": 5600,
+    "ecc_support": false,
+    "voltage_v": 1.1,
+    "pin_count": 288
+  },
+  {
+    "ram_id": "ddr5-32gb-5600-udimm-ecc",
+    "form_factor": "UDIMM",
+    "technology": "DDR5",
+    "capacity_gb": 32,
+    "speed_mts": 5600,
+    "ecc_support": true,
+    "voltage_v": 1.1,
+    "pin_count": 288
+  },
+  {
+    "ram_id": "ddr5-64gb-6400-cudimm-non-ecc",
+    "form_factor": "CUDIMM",
+    "technology": "DDR5",
+    "capacity_gb": 64,
+    "speed_mts": 6400,
+    "ecc_support": false,
+    "voltage_v": 1.1,
+    "pin_count": 288
+  },
+  {
+    "ram_id": "ddr5-16gb-5600-sodimm-non-ecc",
+    "form_factor": "SODIMM",
+    "technology": "DDR5",
+    "capacity_gb": 16,
+    "speed_mts": 5600,
+    "ecc_support": false,
+    "voltage_v": 1.1,
+    "pin_count": 262
+  },
+  {
+    "ram_id": "ddr5-32gb-5600-sodimm-non-ecc",
+    "form_factor": "SODIMM",
+    "technology": "DDR5",
+    "capacity_gb": 32,
+    "speed_mts": 5600,
+    "ecc_support": false,
+    "voltage_v": 1.1,
+    "pin_count": 262
+  },
+  {
+    "ram_id": "ddr5-64gb-5600-camm2-ecc",
+    "form_factor": "CAMM2",
+    "technology": "DDR5",
+    "capacity_gb": 64,
+    "speed_mts": 5600,
+    "ecc_support": true,
+    "voltage_v": 1.1,
+    "pin_count": 0
+  }
+]

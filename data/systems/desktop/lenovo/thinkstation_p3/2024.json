@@ -1,0 +1,417 @@
+{
+  "dimensions_and_weight": {
+    "form_factor": "27 L Tower",
+    "width_mm": 180,
+    "height_mm": 415,
+    "depth_mm": 370,
+    "max_weight_kg": 14.0
+  },
+  "power_supply": {
+    "voltage_sensing": "automatic",
+    "available_wattages": [500, 750, 1100],
+    "input_voltage": "100 V AC - 240 V AC",
+    "input_frequency_hz": "50/60"
+  },
+  "video_port_specifications": {
+    "integrated_graphics_ports": {
+      "native": [
+        { "type": "DisplayPort", "quantity": 2 },
+        { "type": "HDMI", "quantity": 1 }
+      ],
+      "flexible_io_port": {
+        "optional": true,
+        "supported_types": ["DisplayPort", "HDMI", "VGA", "USB-C"]
+      }
+    },
+    "discrete_graphics_support": {
+      "max_gpus": 2,
+      "supported_output_types": [
+        "HDMI",
+        "DisplayPort",
+        "MiniDisplayPort",
+        "DVI"
+      ]
+    }
+  },
+  "operating_environment": {
+    "altitude_m": {
+      "operating": "0 - 3048",
+      "storage": "0 - 12192"
+    },
+    "temperature_celsius": {
+      "operating": "10 - 35",
+      "storage": "-40 - 60"
+    },
+    "relative_humidity_percent": {
+      "operating": "20 - 80 (non-condensing)",
+      "storage": "10 - 90 (non-condensing)"
+    }
+  },
+
+  "memory_specifications": {
+    "allowed_module_quantities": [1, 2, 4],
+    "supported_types_and_capacities": [
+      {
+        "type": "DDR5-5600 non-ECC UDIMM",
+        "capacities_gb": [8, 16, 32, 48]
+      },
+      {
+        "type": "DDR5-5600 ECC UDIMM",
+        "capacities_gb": [16, 32, 48]
+      },
+      {
+        "type": "DDR5-6400 non-ECC CUDIMM",
+        "capacities_gb": [64],
+        "bios_requirement": "Version higher than S0MKT11A"
+      }
+    ],
+    "effective_speed_by_configuration": [
+      {
+        "module_capacities_gb": [8, 16, 32, 48, 64],
+        "quantity": [1, 2],
+        "effective_speed_mts": 5600
+      },
+      {
+        "module_capacities_gb": [8, 16],
+        "quantity": [4],
+        "effective_speed_mts": 4800
+      },
+      {
+        "module_capacities_gb": [32, 48, 64],
+        "quantity": [4],
+        "effective_speed_mts": 4400
+      }
+    ],
+    "installation_rules": {
+      "channel_architecture": "2DPC (2 DIMMs per channel)",
+      "channels": {
+        "channel_a": ["DIMM1", "DIMM2"],
+        "channel_b": ["DIMM3", "DIMM4"]
+      },
+      "population_order": {
+        "1_dimm": ["DIMM2"],
+        "2_dimms": ["DIMM2", "DIMM4"],
+        "4_dimms": ["DIMM1", "DIMM2", "DIMM3", "DIMM4"]
+      },
+      "compatibility_restrictions": {
+        "mix_ecc_and_non_ecc": false,
+        "require_same_type_capacity_dram_density": true,
+        "channel_symmetry_required": true,
+        "same_manufacturer_per_channel": true,
+        "mixed_speed_behavior": "Set to the lowest speed of all installed modules",
+        "cpu_limitation_note": "Real memory speed is capped by the maximum support of the installed microprocessor (e.g., 6400 MT/s modules will run at a maximum of 5600 MT/s if the CPU is the limit)"
+      }
+    }
+  },
+
+  "motherboard_specifications": {
+    "processor_socket": {
+      "element_id": 3,
+      "description": "Microprocessor socket"
+    },
+    "power_connectors": {
+      "cpu_power": { "element_id": 2, "pin_count": 8 },
+      "motherboard_power": { "element_id": 14, "pin_count": 10 },
+      "sata_power": { "element_id": 15 }
+    },
+    "memory_slots": {
+      "total_slots": 4,
+      "layout": [
+        { "element_id": 5, "slot_name": "DIMM1" },
+        { "element_id": 6, "slot_name": "DIMM2" },
+        { "element_id": 7, "slot_name": "DIMM3" },
+        { "element_id": 8, "slot_name": "DIMM4" }
+      ]
+    },
+    "expansion_slots": {
+      "pcie_slots": [
+        { "element_id": 32, "type": "PCIe Gen 5 x16", "bandwidth": "x16" },
+        {
+          "element_id": 30,
+          "type": "PCIe Gen 4 x4",
+          "physical_slot": "x16",
+          "negotiable_bandwidth": "x4"
+        },
+        { "element_id": 31, "type": "PCIe Gen 3 x1", "quantity": 1 },
+        { "element_id": 28, "type": "PCIe Gen 3 x1", "quantity": 1 }
+      ],
+      "wifi_slot": { "element_id": 29, "type": "Wi-Fi card slot" }
+    },
+    "storage_connectors": {
+      "m2_slots": [
+        { "element_id": 34, "type": "M.2 SSD Gen 5 slot" },
+        { "element_id": 19, "type": "M.2 SSD Gen 4 slots" }
+      ],
+      "sata_ports": { "element_id": 18, "description": "SATA connectors" }
+    },
+    "expansion_and_io_connectors": {
+      "thunderbolt_headers": [
+        { "element_id": 27, "name": "Thunderbolt connector 1" },
+        { "element_id": 26, "name": "Thunderbolt connector 2" }
+      ],
+      "flexible_io": {
+        "element_id": 1,
+        "description": "Flexible I/O port card connector"
+      },
+      "usb_front_headers": [
+        { "element_id": 22, "name": "Front USB connector 1" },
+        { "element_id": 23, "name": "Front USB connector 2" }
+      ],
+      "legacy_headers": [
+        { "element_id": 25, "name": "Serial (COM) connector" },
+        {
+          "element_id": 24,
+          "name": "Line printer terminal (LPT) header"
+        }
+      ]
+    },
+    "cooling_fan_headers": {
+      "cpu_fan": { "element_id": 4 },
+      "auxiliary_fan_1_front": { "element_id": 17 },
+      "auxiliary_fan_2_side": { "element_id": 9 },
+      "system_fan_rear": { "element_id": 35 }
+    },
+    "system_management_and_security": {
+      "cmos_jumper": {
+        "element_id": 12,
+        "standard_position_pins": "1 and 2",
+        "clear_cmos_position_pins": "2 and 3"
+      },
+      "thermal_sensor": { "element_id": 21 },
+      "me_disable_connector": { "element_id": 20 },
+      "electronic_lock_connector": { "element_id": 33 },
+      "chassis_intrusion_switch": { "element_id": 36 }
+    }
+  },
+
+  "external_ports_and_pcie_specifications": {
+    "rear_external_ports": [
+      {
+        "element_id": 1,
+        "description": "Audio line-out connector"
+      },
+      { "element_id": 2, "description": "Flexible I/O port" },
+      { "element_id": 3, "description": "HDMI output connector" },
+      { "element_id": 4, "description": "DisplayPort output connectors" },
+      {
+        "element_id": 5,
+        "description": "USB-A connectors (Hi-Speed USB)"
+      },
+      {
+        "element_id": 6,
+        "description": "USB-A connector (USB 5 Gbps) (with smart power-on feature)"
+      },
+      { "element_id": 7, "description": "USB-A connector (USB 5 Gbps)" },
+      { "element_id": 8, "description": "PCIe card area" },
+      {
+        "element_id": 9,
+        "description": "Serial output connector",
+        "optional": true
+      },
+      { "element_id": 10, "description": "Padlock loop" },
+      {
+        "element_id": 11,
+        "description": "Wi-Fi antenna cover slot"
+      },
+      { "element_id": 12, "description": "E-lock slots" },
+      { "element_id": 13, "description": "Ethernet connector" },
+      {
+        "element_id": 14,
+        "description": "Smart cable clip slots"
+      },
+      { "element_id": 15, "description": "Security lock slot" },
+      { "element_id": 16, "description": "Power cord connector" }
+    ],
+    "pcie_card_area_connectors": {
+      "supported_card_types": [
+        "USB cards",
+        "Ethernet cards",
+        "Video output cards"
+      ],
+      "video_output_connectors": [
+        "HDMI output connectors",
+        "DisplayPort output connectors",
+        "MiniDisplayPort output connectors",
+        "DVI output connectors"
+      ]
+    },
+    "flexible_io_port_options": [
+      "DisplayPort output connector",
+      "HDMI output connector",
+      "VGA output connector",
+      "USB-C output connector"
+    ],
+    "serial_output_connector_use_cases": [
+      "External modem",
+      "Serial printer",
+      "Devices with serial output connector"
+    ]
+  },
+  "raid_specifications": {
+    "intel_rst": {
+      "supported_drive_types": ["SATA", "NVMe"],
+      "levels": [
+        {
+          "level": "RAID 0",
+          "description": "Striped disk array",
+          "min_drives": 2,
+          "strip_sizes_kb": [4, 8, 16, 32, 64, 128],
+          "fault_tolerance": false,
+          "performance": "Best performance"
+        },
+        {
+          "level": "RAID 1",
+          "description": "Duplicated disk array",
+          "drives_required": 2,
+          "fault_tolerance": true,
+          "redundancy": "100%",
+          "performance": "Improved read performance"
+        },
+        {
+          "level": "RAID 5",
+          "description": "Block-level striping disk array with distributed parity",
+          "min_drives": 3,
+          "strip_sizes_kb": [16, 32, 64, 128],
+          "fault_tolerance": true,
+          "performance": "Best performance"
+        },
+        {
+          "level": "RAID 10",
+          "description": "Striped and duplicated disk array",
+          "min_drives": 4,
+          "drive_type_restriction": "SATA",
+          "strip_sizes_kb": [4, 8, 16, 32, 64],
+          "fault_tolerance": true,
+          "redundancy": "100%",
+          "performance": "Improved read performance"
+        }
+      ],
+      "configuration_steps": {
+        "enable_sata_raid": [
+          "Reboot system and press F1 or Fn+F1 at the logo screen",
+          "Navigate to Devices -> Storage Setup",
+          "Change Configure Storage to RAID",
+          "Save changes with F10 or Fn+F10"
+        ],
+        "create_volume": [
+          "Enter BIOS (F1 / Fn+F1) -> Devices -> Storage Setup",
+          "Select Intel (R) Rapid Storage Technology",
+          "Select Create RAID Volume",
+          "Set Name, RAID Level, physical drives, Strip Size, and Capacity",
+          "Select Create Volume"
+        ],
+        "delete_volume": [
+          "Enter Intel (R) Rapid Storage Technology",
+          "Select the volume to delete -> Delete -> Confirm (Yes)"
+        ],
+        "reset_to_non_raid": [
+          "Enter Intel (R) Rapid Storage Technology",
+          "Select the volume / drives -> Reset to Non-RAID -> Confirm (Yes)"
+        ]
+      }
+    },
+    "broadcom_9408i": {
+      "hardware_requirements": [
+        "Broadcom 940-8i RAID card installed",
+        "Storage drives connected to the RAID card instead of the system board"
+      ],
+      "supported_drive_types": ["SATA"],
+      "levels": [
+        {
+          "level": "RAID 0",
+          "description": "Striped disk array",
+          "min_drives": 2,
+          "strip_sizes_kb": [64, 128, 256, 512, 1024],
+          "fault_tolerance": false
+        },
+        {
+          "level": "RAID 1",
+          "description": "Duplicated disk array",
+          "allowed_drives": [2, 4],
+          "fault_tolerance": true,
+          "redundancy": "100%"
+        },
+        {
+          "level": "RAID 5",
+          "description": "Block-level striping disk array with distributed parity",
+          "min_drives": 3,
+          "strip_sizes_kb": [64, 128, 256, 512, 1024],
+          "fault_tolerance": true
+        }
+      ],
+      "configuration_steps": {
+        "create_volume": [
+          "Press F1 / Fn+F1 -> Advanced -> BROADCOM <RAID 940-8i 4GB Flash> Configuration Utility",
+          "Main Menu -> Configuration Management -> Create Virtual Drive",
+          "Select storage drives -> OK -> Confirm (Yes)",
+          "Configure Select RAID Level, Select Drives From, Select Drives (Apply Changes), Virtual Drive Name, Virtual Drive Size, Strip Size",
+          "Save Configuration -> Confirm (Yes) -> Save and exit with F10 / Fn+F10"
+        ],
+        "delete_volume": [
+          "Navigate to Virtual Drive Management",
+          "Select volume -> Operation -> Delete Virtual Drive -> Go -> Confirm (Yes)",
+          "Save changes with F10 or Fn+F10"
+        ]
+      }
+    }
+  },
+
+  "integrated_m2_ssd_specifications": {
+    "slot_types": [
+      {
+        "slot_id": 1,
+        "label": "M.2 SSD Gen 5 slot",
+        "supported_ssd_types": ["M.2 2280 Gen 4 SSD", "M.2 2280 Gen 5 SSD"],
+        "performance_note": "For optimal performance, install the Gen 5 M.2 SSD in slot 1."
+      },
+      {
+        "slot_ids": [2, 3],
+        "label": "M.2 SSD Gen 4 slots",
+        "supported_ssd_types": ["M.2 2280 Gen 4 SSD"]
+      }
+    ],
+    "replacement_steps_reference": "For instructions on installing or replacing an integrated M.2 SSD, refer to the replacement steps and rules in 'Integrated M.2 SSD and heat sink' on page 58."
+  },
+
+  "pcie_card_specifications": {
+    "total_slots": 4,
+    "supported_card_types": [
+      "Graphics cards",
+      "PCIe M.2 SSD adapter cards",
+      "Broadcom 940-8i RAID cards",
+      "USB4 PCIe cards",
+      "Other PCIe adapter cards"
+    ],
+    "slots": [
+      {
+        "slot_id": 1,
+        "type": "PCIe x16 Gen 5"
+      },
+      {
+        "slot_id": 2,
+        "type": "PCIe x1 Gen 3"
+      },
+      {
+        "slot_id": 3,
+        "type": "PCIe x4 Gen 4",
+        "physical_link_width": "x16",
+        "negotiable_link_width": "x4"
+      },
+      {
+        "slot_id": 4,
+        "type": "PCIe x1 Gen 3"
+      }
+    ],
+    "replacement_steps_reference": "For instructions on installing or replacing a PCIe card, refer to 'PCIe cards' on page 69."
+  },
+  "sd_card_specifications": {
+    "location": "Front panel",
+    "reader_type": "3-in-1 card reader",
+    "supported_sd_card_types": [
+      "SD Card",
+      "High Capacity SD Card (SDHC)",
+      "Extended Capacity SD Card (SDXC)"
+    ],
+    "replacement_steps_reference": "For instructions on adding or replacing a 3-in-1 card reader, refer to '3-in-1 card reader' on page 68."
+  }
+}

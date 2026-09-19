@@ -1,0 +1,123 @@
+[
+  {
+    "drive_id": "ssd-m2-nvme-gen4-512gb-2280",
+    "type": "SSD",
+    "form_factor": "M.2 2280",
+    "interface": "PCIe Gen 4x4",
+    "capacity_gb": 512,
+    "read_speed_mbps": 5000,
+    "write_speed_mbps": 4200,
+    "self_encrypting": false,
+    "class_category": "Class 40"
+  },
+  {
+    "drive_id": "ssd-m2-nvme-gen4-1tb-2280",
+    "type": "SSD",
+    "form_factor": "M.2 2280",
+    "interface": "PCIe Gen 4x4",
+    "capacity_gb": 1024,
+    "read_speed_mbps": 7000,
+    "write_speed_mbps": 6000,
+    "self_encrypting": false,
+    "class_category": "Class 40"
+  },
+  {
+    "drive_id": "ssd-m2-nvme-gen4-2tb-2280",
+    "type": "SSD",
+    "form_factor": "M.2 2280",
+    "interface": "PCIe Gen 4x4",
+    "capacity_gb": 2048,
+    "read_speed_mbps": 7300,
+    "write_speed_mbps": 6400,
+    "self_encrypting": false,
+    "class_category": "Class 40"
+  },
+  {
+    "drive_id": "ssd-m2-nvme-gen4-4tb-2280",
+    "type": "SSD",
+    "form_factor": "M.2 2280",
+    "interface": "PCIe Gen 4x4",
+    "capacity_gb": 4096,
+    "read_speed_mbps": 7300,
+    "write_speed_mbps": 6500,
+    "self_encrypting": false,
+    "class_category": "Class 40"
+  },
+  {
+    "drive_id": "ssd-m2-nvme-gen4-1tb-2280-sed",
+    "type": "SSD",
+    "form_factor": "M.2 2280",
+    "interface": "PCIe Gen 4x4",
+    "capacity_gb": 1024,
+    "read_speed_mbps": 7000,
+    "write_speed_mbps": 6000,
+    "self_encrypting": true,
+    "class_category": "Class 40 OPAL SED"
+  },
+  {
+    "drive_id": "ssd-m2-nvme-gen4-256gb-2230",
+    "type": "SSD",
+    "form_factor": "M.2 2230",
+    "interface": "PCIe Gen 4x4",
+    "capacity_gb": 256,
+    "read_speed_mbps": 3500,
+    "write_speed_mbps": 2200,
+    "self_encrypting": false,
+    "class_category": "Class 35"
+  },
+  {
+    "drive_id": "ssd-m2-nvme-gen5-1tb-2280",
+    "type": "SSD",
+    "form_factor": "M.2 2280",
+    "interface": "PCIe Gen 5x4",
+    "capacity_gb": 1024,
+    "read_speed_mbps": 10000,
+    "write_speed_mbps": 9500,
+    "self_encrypting": false,
+    "class_category": "Gen 5 High Speed"
+  },
+  {
+    "drive_id": "ssd-m2-nvme-gen5-2tb-2280",
+    "type": "SSD",
+    "form_factor": "M.2 2280",
+    "interface": "PCIe Gen 5x4",
+    "capacity_gb": 2048,
+    "read_speed_mbps": 12000,
+    "write_speed_mbps": 11000,
+    "self_encrypting": false,
+    "class_category": "Gen 5 High Speed"
+  },
+  {
+    "drive_id": "hdd-sata-3.5-2tb-7200rpm",
+    "type": "HDD",
+    "form_factor": "3.5 inch",
+    "interface": "SATA 6.0 Gb/s",
+    "capacity_gb": 2048,
+    "rpm": 7200,
+    "read_speed_mbps": 220,
+    "write_speed_mbps": 215,
+    "grade": "Standard"
+  },
+  {
+    "drive_id": "hdd-sata-3.5-4tb-7200rpm",
+    "type": "HDD",
+    "form_factor": "3.5 inch",
+    "interface": "SATA 6.0 Gb/s",
+    "capacity_gb": 4096,
+    "rpm": 7200,
+    "read_speed_mbps": 250,
+    "write_speed_mbps": 240,
+    "grade": "Standard"
+  },
+  {
+    "drive_id": "hdd-sata-3.5-8tb-7200rpm-enterprise",
+    "type": "HDD",
+    "form_factor": "3.5 inch",
+    "interface": "SATA 6.0 Gb/s",
+    "capacity_gb": 8192,
+    "rpm": 7200,
+    "read_speed_mbps": 270,
+    "write_speed_mbps": 260,
+    "grade": "Enterprise"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "system_id": "lenovo-thinkpad-p1-g6-2023",
+  "brand": "Lenovo",
+  "model": "ThinkPad P1 Gen 6",
+  "year": 2023,
+  "form_factor": "Laptop",
+  "physical_constraints": {
+    "has_upgradeable_ram": true,
+    "has_upgradeable_storage": true
+  },
+  "power_supply": {
+    "is_proprietary": true,
+    "max_wattage_w": 230
+  },
+  "expansion": {
+    "ram_slots_count": 2,
+    "max_ram_gb": 64,
+    "supported_ram_types": ["DDR5-SODIMM"],
+    "pcie_slots": [],
+    "m2_nvme_slots": [
+      { "slot_id": 1, "gen": 4, "lanes": 4, "supported_sizes": ["2280"] },
+      { "slot_id": 2, "gen": 4, "lanes": 4, "supported_sizes": ["2280"] }
+    ]
+  }
+}

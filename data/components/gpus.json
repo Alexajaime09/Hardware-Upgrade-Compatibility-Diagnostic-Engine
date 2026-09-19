@@ -1,0 +1,337 @@
+[
+  {
+    "gpu_id": "nvidia-rtx-6000-ada",
+    "brand": "NVIDIA",
+    "series": "Workstation Ada Generation",
+    "model": "NVIDIA RTX 6000 Ada Generation",
+    "vram_gb": 48,
+    "vram_type": "GDDR6",
+    "tdp_watts": 300,
+    "slot_width": 2,
+    "length_mm": 267,
+    "power_connector": "16-pin (12VHPWR / 12V-2x6)",
+    "video_outputs": {
+      "ports": [{ "type": "DisplayPort", "version": "1.4a", "count": 4 }],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@120Hz (con DSC o multienlace DP)"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "nvidia-rtx-5000-ada",
+    "brand": "NVIDIA",
+    "series": "Workstation Ada Generation",
+    "model": "NVIDIA RTX 5000 Ada Generation",
+    "vram_gb": 32,
+    "vram_type": "GDDR6",
+    "tdp_watts": 250,
+    "slot_width": 2,
+    "length_mm": 267,
+    "power_connector": "16-pin (12VHPWR / 12V-2x6)",
+    "video_outputs": {
+      "ports": [{ "type": "DisplayPort", "version": "1.4a", "count": 4 }],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@120Hz (con DSC)"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "nvidia-rtx-4500-ada",
+    "brand": "NVIDIA",
+    "series": "Workstation Ada Generation",
+    "model": "NVIDIA RTX 4500 Ada Generation",
+    "vram_gb": 24,
+    "vram_type": "GDDR6",
+    "tdp_watts": 210,
+    "slot_width": 2,
+    "length_mm": 267,
+    "power_connector": "16-pin (12VHPWR / 12V-2x6)",
+    "video_outputs": {
+      "ports": [{ "type": "DisplayPort", "version": "1.4a", "count": 4 }],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@120Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "nvidia-rtx-4000-ada",
+    "brand": "NVIDIA",
+    "series": "Workstation Ada Generation",
+    "model": "NVIDIA RTX 4000 Ada Generation",
+    "vram_gb": 20,
+    "vram_type": "GDDR6",
+    "tdp_watts": 130,
+    "slot_width": 1,
+    "length_mm": 241,
+    "power_connector": "16-pin (12VHPWR / 12V-2x6)",
+    "video_outputs": {
+      "ports": [{ "type": "DisplayPort", "version": "1.4a", "count": 4 }],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@120Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "nvidia-rtx-2000-ada",
+    "brand": "NVIDIA",
+    "series": "Workstation Ada Generation",
+    "model": "NVIDIA RTX 2000 Ada Generation",
+    "vram_gb": 16,
+    "vram_type": "GDDR6",
+    "tdp_watts": 70,
+    "slot_width": 2,
+    "length_mm": 168,
+    "power_connector": "None (Slot Driven)",
+    "video_outputs": {
+      "ports": [{ "type": "miniDisplayPort", "version": "1.4a", "count": 4 }],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": true
+    }
+  },
+  {
+    "gpu_id": "nvidia-rtx-a1000",
+    "brand": "NVIDIA",
+    "series": "Workstation Ampere",
+    "model": "NVIDIA RTX A1000",
+    "vram_gb": 8,
+    "vram_type": "GDDR6",
+    "tdp_watts": 50,
+    "slot_width": 1,
+    "length_mm": 168,
+    "power_connector": "None (Slot Driven)",
+    "video_outputs": {
+      "ports": [{ "type": "miniDisplayPort", "version": "1.4a", "count": 4 }],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@30Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": true
+    }
+  },
+  {
+    "gpu_id": "nvidia-rtx-a400",
+    "brand": "NVIDIA",
+    "series": "Workstation Ampere",
+    "model": "NVIDIA RTX A400",
+    "vram_gb": 4,
+    "vram_type": "GDDR6",
+    "tdp_watts": 50,
+    "slot_width": 1,
+    "length_mm": 168,
+    "power_connector": "None (Slot Driven)",
+    "video_outputs": {
+      "ports": [{ "type": "miniDisplayPort", "version": "1.4a", "count": 4 }],
+      "max_monitors": 4,
+      "max_resolution": "5120x2880@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": true
+    }
+  },
+  {
+    "gpu_id": "nvidia-t1000",
+    "brand": "NVIDIA",
+    "series": "Workstation Turing",
+    "model": "NVIDIA T1000",
+    "vram_gb": 8,
+    "vram_type": "GDDR6",
+    "tdp_watts": 50,
+    "slot_width": 1,
+    "length_mm": 156,
+    "power_connector": "None (Slot Driven)",
+    "video_outputs": {
+      "ports": [{ "type": "miniDisplayPort", "version": "1.4a", "count": 4 }],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": true
+    }
+  },
+  {
+    "gpu_id": "nvidia-t400",
+    "brand": "NVIDIA",
+    "series": "Workstation Turing",
+    "model": "NVIDIA T400",
+    "vram_gb": 4,
+    "vram_type": "GDDR6",
+    "tdp_watts": 30,
+    "slot_width": 1,
+    "length_mm": 156,
+    "power_connector": "None (Slot Driven)",
+    "video_outputs": {
+      "ports": [{ "type": "miniDisplayPort", "version": "1.4a", "count": 3 }],
+      "max_monitors": 3,
+      "max_resolution": "5120x2880@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": true
+    }
+  },
+  {
+    "gpu_id": "nvidia-geforce-rtx-4090",
+    "brand": "NVIDIA",
+    "series": "GeForce RTX 40 Series",
+    "model": "NVIDIA GeForce RTX 4090",
+    "vram_gb": 24,
+    "vram_type": "GDDR6X",
+    "tdp_watts": 450,
+    "slot_width": 3.5,
+    "length_mm": 312,
+    "power_connector": "16-pin (12VHPWR / 12V-2x6)",
+    "video_outputs": {
+      "ports": [
+        { "type": "DisplayPort", "version": "1.4a", "count": 3 },
+        { "type": "HDMI", "version": "2.1a", "count": 1 }
+      ],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "nvidia-geforce-rtx-4080-super",
+    "brand": "NVIDIA",
+    "series": "GeForce RTX 40 Series",
+    "model": "NVIDIA GeForce RTX 4080 Super",
+    "vram_gb": 16,
+    "vram_type": "GDDR6X",
+    "tdp_watts": 320,
+    "slot_width": 3,
+    "length_mm": 304,
+    "power_connector": "16-pin (12VHPWR / 12V-2x6)",
+    "video_outputs": {
+      "ports": [
+        { "type": "DisplayPort", "version": "1.4a", "count": 3 },
+        { "type": "HDMI", "version": "2.1a", "count": 1 }
+      ],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "nvidia-geforce-rtx-4070",
+    "brand": "NVIDIA",
+    "series": "GeForce RTX 40 Series",
+    "model": "NVIDIA GeForce RTX 4070",
+    "vram_gb": 12,
+    "vram_type": "GDDR6X",
+    "tdp_watts": 200,
+    "slot_width": 2,
+    "length_mm": 242,
+    "power_connector": "1x 8-pin PCIe",
+    "video_outputs": {
+      "ports": [
+        { "type": "DisplayPort", "version": "1.4a", "count": 3 },
+        { "type": "HDMI", "version": "2.1a", "count": 1 }
+      ],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "nvidia-geforce-rtx-4060",
+    "brand": "NVIDIA",
+    "series": "GeForce RTX 40 Series",
+    "model": "NVIDIA GeForce RTX 4060",
+    "vram_gb": 8,
+    "vram_type": "GDDR6",
+    "tdp_watts": 115,
+    "slot_width": 2,
+    "length_mm": 210,
+    "power_connector": "1x 8-pin PCIe",
+    "video_outputs": {
+      "ports": [
+        { "type": "DisplayPort", "version": "1.4a", "count": 3 },
+        { "type": "HDMI", "version": "2.1a", "count": 1 }
+      ],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "amd-radeon-pro-w7900",
+    "brand": "AMD",
+    "series": "Radeon Pro W7000 Series",
+    "model": "AMD Radeon Pro W7900",
+    "vram_gb": 48,
+    "vram_type": "GDDR6",
+    "tdp_watts": 295,
+    "slot_width": 3,
+    "length_mm": 280,
+    "power_connector": "2x 8-pin PCIe",
+    "video_outputs": {
+      "ports": [
+        { "type": "DisplayPort", "version": "2.1", "count": 3 },
+        { "type": "miniDisplayPort", "version": "2.1", "count": 1 }
+      ],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@120Hz (DisplayPort 2.1 nativo)"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "amd-radeon-pro-w7600",
+    "brand": "AMD",
+    "series": "Radeon Pro W7000 Series",
+    "model": "AMD Radeon Pro W7600",
+    "vram_gb": 8,
+    "vram_type": "GDDR6",
+    "tdp_watts": 130,
+    "slot_width": 1,
+    "length_mm": 241,
+    "power_connector": "1x 6-pin PCIe",
+    "video_outputs": {
+      "ports": [{ "type": "DisplayPort", "version": "2.1", "count": 4 }],
+      "max_monitors": 4,
+      "max_resolution": "7680x4320@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": false
+    }
+  },
+  {
+    "gpu_id": "amd-radeon-pro-w6300",
+    "brand": "AMD",
+    "series": "Radeon Pro W6000 Series",
+    "model": "AMD Radeon Pro W6300",
+    "vram_gb": 2,
+    "vram_type": "GDDR6",
+    "tdp_watts": 50,
+    "slot_width": 1,
+    "length_mm": 168,
+    "power_connector": "None (Slot Driven)",
+    "video_outputs": {
+      "ports": [{ "type": "miniDisplayPort", "version": "1.4a", "count": 2 }],
+      "max_monitors": 2,
+      "max_resolution": "5120x2880@60Hz"
+    },
+    "requires_adapter": {
+      "minidp_to_dp": true
+    }
+  }
+]
