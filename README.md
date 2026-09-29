@@ -1,75 +1,18 @@
-# React + TypeScript + Vite
+Development
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+19 sept 2026
 
-Currently, two official plugins are available:
+Day 1: Problem Scope, Workstation Curation & Architecture Design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Progress:**
 
-## React Compiler
+- **Workstation Selection:** Selection of a list of computer systems meeting minimum technical specifications based on defined user profiles.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Profile Selection:** Selection of professional roles where computer performance is fundamental to the work and directly impacts productivity. The profiles targeted by this software include: 3D Animators, Video Editors, Motion Graphics Artists, and Streamers.
 
-## Expanding the ESLint configuration
+- **Specification Research:** Official technical reference manuals and hardware specification sheets were gathered to identify limits regarding expansion slots, PCIe specifications, drive bays, and power supply wattage.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **JSON Object Schemas:** I created structured JSON models in `datos/sistemas/` and `datos/componentes/` to store detailed hardware specifications (CPU, GPU, RAM, storage) for automated diagnostic analysis.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+- **Challenges and Solutions:**
+- _Challenge:_ Determining the optimal application architecture that balances diagnostic processing speed with low maintenance requirements.

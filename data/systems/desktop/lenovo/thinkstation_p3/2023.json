@@ -1,202 +1,71 @@
 {
-  "dimensions_and_weight": {
-    "width_mm": 180,
-    "height_mm": 415,
-    "depth_mm": 370,
-    "max_weight_kg": 13.61
+  "system_info": {
+    "system_id": "lenovo-thinkstation-p3-tower-2023",
+    "brand": "Lenovo",
+    "model": "ThinkStation P3 Tower",
+    "year": 2023,
+    "form_factor": "27 L Tower"
+  },
+  "physical_constraints": {
+    "max_gpu_slots": 2,
+    "max_gpu_length_mm": 305,
+    "max_cpu_cooler_height_mm": 155
   },
   "power_supply": {
-    "voltage_sensing": "automatic",
-    "available_wattages": [500, 750, 1100],
-    "input_voltage": "100 V AC - 240 V AC",
-    "input_frequency_hz": "50/60"
+    "is_proprietary": true,
+    "available_wattages_w": [500, 750, 1100]
   },
-  "memory_specifications": {
-    "type": "UDIMM DDR5",
-    "max_slots": 4,
-    "max_capacity_gb": 128,
-    "installed_module_speed_mts": 5600,
-    "max_supported_speed_mts": 4400,
-    "notes": [
-      "Final memory speed is limited to 4400 MT/s due to platform/microprocessor restrictions.",
-      "Requires following a strict module installation order."
+  "motherboard_expansion": {
+    "socket": "LGA1700",
+    "chipset": "Intel W680",
+    "ram_slots_count": 4,
+    "max_ram_gb": 128,
+    "supported_ram_technologies": ["UDIMM DDR5 ECC", "UDIMM DDR5 non-ECC"],
+    "pcie_slots": [
+      {
+        "slot_id": 1,
+        "gen": 4,
+        "lanes": 16,
+        "size": "x16"
+      },
+      {
+        "slot_id": 2,
+        "gen": 3,
+        "lanes": 1,
+        "size": "x1"
+      },
+      {
+        "slot_id": 3,
+        "gen": 4,
+        "lanes": 4,
+        "size": "x16"
+      },
+      {
+        "slot_id": 4,
+        "gen": 3,
+        "lanes": 1,
+        "size": "x1"
+      }
     ],
-    "compatibility_rules": {
-      "mix_ecc_and_non_ecc": false,
-      "symmetry_requirement": "Symmetrical configurations required within a channel. Both DIMMs in a channel must be from the same manufacturer."
-    },
-    "supported_module_types": ["UDIMM DDR5 ECC", "UDIMM DDR5 non-ECC"],
-    "speed_by_configuration": [
+    "m2_nvme_slots": [
       {
-        "configurations": [
-          "1 x 8 GB",
-          "2 x 8 GB",
-          "1 x 16 GB",
-          "2 x 16 GB",
-          "1 x 32 GB",
-          "2 x 32 GB"
-        ],
-        "effective_speed_mts": 4400
+        "slot_id": 1,
+        "gen": 4,
+        "lanes": 4,
+        "max_size": "2280"
       },
       {
-        "configurations": ["4 x 8 GB", "4 x 16 GB"],
-        "effective_speed_mts": 4000
+        "slot_id": 2,
+        "gen": 4,
+        "lanes": 4,
+        "max_size": "2280"
       },
       {
-        "configurations": ["4 x 32 GB"],
-        "effective_speed_mts": 3600
+        "slot_id": 3,
+        "gen": 4,
+        "lanes": 4,
+        "max_size": "2280"
       }
     ]
-  },
-  "storage_specifications": {
-    "supported_drive_types": [
-      "3.5-inch Hard Disk Drive",
-      "2.5-inch Hard Disk Drive",
-      "2.5-inch Solid State Drive",
-      "M.2 Solid State Drive"
-    ],
-    "expansion_bays_and_slots": {
-      "flex_bay": true,
-      "primary_3_5_bays": true,
-      "m2_gen4_slots": true
-    },
-    "coexistence_restrictions": {
-      "m2_and_3_5_bays_conflict": "When an M.2 SSD is installed, only primary bays 5a and 5b may be available."
-    }
-  },
-  "video_port_specifications": {
-    "integrated_graphics_ports": [
-      { "type": "DisplayPort", "optional": false },
-      { "type": "HDMI", "optional": false },
-      { "type": "VGA", "optional": true },
-      { "type": "USB-C 3.2 Gen 1", "optional": true }
-    ],
-    "discrete_graphics_support": true
-  },
-  "internal_slots": {
-    "m2_slots": {
-      "storage": "M.2 Gen 4 Solid State Drive slots"
-    },
-    "pcie_slots": [
-      { "type": "PCIe x1", "version": "N/A" },
-      { "type": "PCIe x16", "version": "Gen 4", "bandwidth": "x16" },
-      { "type": "PCIe x16", "version": "Gen 4", "bandwidth": "x4 negotiable" }
-    ],
-    "memory_slots": 4,
-    "gpu_placement_rules": {
-      "primary_slot": "PCIe x16 Gen 4",
-      "dual_gpu_rule": "The discrete graphics card with higher power consumption must be installed in the primary PCIe x16 Gen 4 slot."
-    }
-  },
-  "external_ports": {
-    "network": [
-      { "type": "Ethernet LAN", "optional": false },
-      { "type": "Wireless LAN", "optional": true }
-    ],
-    "wireless": {
-      "bluetooth": true
-    },
-    "card_reader": "SD card slot (optional)",
-    "usb_c_performance": {
-      "max_speed_gbps": 10,
-      "display_alt_mode_resolutions": {
-        "usb_c_to_vga": "1920 x 1200 @ 60 Hz",
-        "usb_c_to_dp": "3840 x 2160 @ 60 Hz"
-      }
-    },
-    "video_outputs": {
-      "hdmi_out": true,
-      "displayport_out": true,
-      "optional_connector_types": [
-        "DisplayPort",
-        "HDMI",
-        "VGA",
-        "USB-C 3.2 Gen 1"
-      ]
-    },
-    "usb_ports": {
-      "type_a": [
-        {
-          "type": "USB-A 3.2 Gen 1",
-          "speed_gbps": 5,
-          "features": ["Smart Power-On support"]
-        },
-        {
-          "type": "USB-A 3.2 Gen 2",
-          "speed_gbps": 10
-        }
-      ],
-      "type_c": [
-        {
-          "type": "USB-C 3.2 Gen 1",
-          "speed_gbps": 5
-        },
-        {
-          "type": "USB-C 3.2 Gen 2",
-          "speed_gbps": 10
-        }
-      ],
-      "power_output_type_c": "5V, 3A",
-      "display_alt_mode_resolutions": {
-        "usb_c_to_vga": "1920 x 1200 @ 60 Hz",
-        "usb_c_to_dp": "3840 x 2160 @ 60 Hz"
-      }
-    },
-    "networking": {
-      "ethernet_rj45": true
-    },
-    "audio": {
-      "line_out": true
-    },
-    "legacy_and_optional_ports": {
-      "serial_port": "optional",
-      "ps2_mouse_port": "optional",
-      "ps2_keyboard_port": "optional"
-    },
-    "security_and_management": {
-      "padlock_loop": true,
-      "electronic_lock_slots": true,
-      "smart_cable_clip_slots": true,
-      "security_lock_slot": true
-    }
-  },
-  "operating_environment": {
-    "altitude_m": {
-      "operating": "0 - 3048",
-      "storage": "0 - 12192"
-    },
-    "temperature_celsius": {
-      "operating": "10 - 35",
-      "storage": "-40 - 60"
-    },
-    "relative_humidity_percent": {
-      "operating": "20 - 80 (non-condensing)",
-      "storage": "10 - 90 (non-condensing)"
-    }
-  },
-  "usb_transfer_rates": {
-    "standards": [
-      {
-        "device_standard": "3.2 Gen 1",
-        "transfer_rate_gbps": 5
-      },
-      {
-        "device_standard": "3.2 Gen 2",
-        "transfer_rate_gbps": 10
-      },
-      {
-        "device_standard": "3.2 Gen 2 x 2",
-        "transfer_rate_gbps": 20
-      },
-      {
-        "device_standard": "Thunderbolt 3",
-        "transfer_rate_gbps": 40
-      },
-      {
-        "device_standard": "Thunderbolt 4",
-        "transfer_rate_gbps": 40
-      }
-    ],
-    "disclaimer": "Actual transfer speed will vary and will be lower than the nominal rate due to host processing, peripherals, file attributes, and operating environment."
   }
 }
