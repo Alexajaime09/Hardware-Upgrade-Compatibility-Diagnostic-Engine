@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { WorkstationModel } from "../clients/HardwareClient";
+import { WorkstationModel } from "../models/HardwareClient";
 
 export const getSystems = async (req: Request, res: Response) => {
   try {

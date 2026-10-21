@@ -16,6 +16,7 @@ export interface IWorkstationSystem extends Document {
   power_supply: {
     is_proprietary: boolean;
     available_wattages_w: number[];
+    installed_wattage_w: number;
   };
   motherboard_expansion: {
     socket: string;

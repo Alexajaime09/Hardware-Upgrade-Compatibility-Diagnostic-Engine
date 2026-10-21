@@ -22,6 +22,7 @@ export interface DiagnosticRequest {
     | "Streamer";
   symptom: string;
   physicalInput: PhysicalValidationInput;
+  component_category: string;
   powerInput: PowerValidationInput;
   pcieSystemSpec: SystemPcieSpec;
   pcieTargetConfig: TargetPcieConfiguration;
@@ -33,6 +34,7 @@ export interface DiagnosticResult {
   is_fully_compatible: boolean;
   profile: string;
   symptom_analyzed: string;
+  component_category: string;
   consolidated_warnings: string[];
   recommendations: {
     calculated_ram_capacity_gb: number;
@@ -91,6 +93,7 @@ export function runDiagnosticEngine(
     is_fully_compatible: isFullyCompatible,
     profile: request.profile,
     symptom_analyzed: request.symptom,
+    component_category: request.component_category,
     consolidated_warnings: consolidateWarnings,
     recommendations: {
       calculated_ram_capacity_gb: ramRes.total_capacity_gb,

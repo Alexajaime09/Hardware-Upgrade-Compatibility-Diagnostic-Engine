@@ -2,7 +2,7 @@ import path from "path";
 import fs from "fs";
 import dotenv from "dotenv";
 import { connectDatabase } from "./config/db";
-import { WorkstationModel } from "./clients/HardwareClient";
+import { WorkstationModel } from "./models/HardwareClient";
 
 dotenv.config();
 

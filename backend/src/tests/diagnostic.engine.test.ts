@@ -8,6 +8,7 @@ describe("Diagnostic Engine Orchestrator(diagnostic.engine)", () => {
     const request: DiagnosticRequest = {
       profile: "Video Editor",
       symptom: "Slow rendering and timeline lags",
+      component_category: "Memory and GPU",
       physicalInput: {
         max_gpu_slots: 3,
         max_gpu_length_mm: 350,
@@ -54,6 +55,7 @@ describe("Diagnostic Engine Orchestrator(diagnostic.engine)", () => {
     const request: DiagnosticRequest = {
       profile: "3D Animation",
       symptom: "Crahes during heavy scenes and power cuts",
+      component_category: "Memory and GPU",
       physicalInput: {
         max_gpu_slots: 2,
         max_gpu_length_mm: 240,
