@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-bg-base: #193654;
+  --color-brand-secondary: #2a5679;
+  --color-brand-button: #2c97df;
+  --color-brand-button-hover: #227cb8;
+  --color-brand-container: #fdfbfa;
+  --color-feedback-success: #10b981;
+  --color-feedback-warning: #f59e0b;
+  --color-feedback-danger: #ef4444;
+  --background-image-gradient: linear-gradient(
+    145deg,
+    #0a2742 0%,
+    #1a80d3 100%
+  );
+  --font-sans: Inter, system-ui, sans-serif;
+}

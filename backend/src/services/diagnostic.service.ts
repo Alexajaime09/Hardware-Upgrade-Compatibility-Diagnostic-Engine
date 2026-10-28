@@ -8,6 +8,35 @@ import {
   DiagnosticResult,
 } from "../engine/diagnostic.engine";
 
+export interface UserHardwareConfig {
+  cpu?: string;
+  ramGb?: number;
+  gpuModel?: string;
+  storageType?: string;
+}
+
+// Función auxiliar para estimar la VRAM en GB a partir del string del modelo de GPU del usuario
+function estimateUserGpuVram(gpuModelName?: string): number {
+  if (!gpuModelName) return 12; // Valor por defecto seguro
+  const name = gpuModelName.toUpperCase();
+  if (name.includes("4090") || name.includes("3090") || name.includes("6000"))
+    return 24;
+  if (name.includes("4080") || name.includes("A5000") || name.includes("5000"))
+    return 16;
+  if (name.includes("4070") || name.includes("3080")) return 12;
+  if (
+    name.includes("4060") ||
+    name.includes("3070") ||
+    name.includes("3060") ||
+    name.includes("A4000") ||
+    name.includes("T1000")
+  )
+    return 8;
+  if (name.includes("A400") || name.includes("T400") || name.includes("W6300"))
+    return 4;
+  return 8; // Estándar conservador para gama media-baja
+}
+
 export async function executeDiagnosticForWorkstation(
   workstationId: string | Types.ObjectId,
   profileName:
@@ -16,6 +45,7 @@ export async function executeDiagnosticForWorkstation(
     | "Motion Graphics Artist"
     | "Streamer",
   symptomKey: string,
+  userHardware?: UserHardwareConfig,
 ): Promise<DiagnosticResult> {
   const objectId =
     typeof workstationId === "string"
@@ -26,7 +56,7 @@ export async function executeDiagnosticForWorkstation(
 
   if (!workstation) {
     throw new Error(
-      `Workstation with ID ${workstation} not found in the data base `,
+      `Workstation with ID ${workstationId} not found in the database`,
     );
   }
 
@@ -45,20 +75,42 @@ export async function executeDiagnosticForWorkstation(
     (slot) => slot.size === "x16" || slot.lanes === 16,
   ).length;
 
+  // 1. Extraemos y normalizamos la RAM del usuario
+  const userRamInstalled = userHardware?.ramGb
+    ? Number(userHardware.ramGb)
+    : 32;
+  const requiredRam = profileSelected.target_required_ram_gb;
+
+  // 2. Extraemos el modelo de GPU del usuario y estimamos su VRAM
+  const userGpuModel =
+    userHardware?.gpuModel || "NVIDIA GeForce RTX 4060 (8GB)";
+  const userGpuVram = estimateUserGpuVram(userGpuModel);
+
+  // 3. Obtenemos los umbrales dinámicamente desde el documento de MongoDB Atlas
+  const targetMinVram = profileSelected.target_min_vram_gb || 16;
+  const targetGpuModelName =
+    profileSelected.target_gpu_model_name ||
+    "NVIDIA RTX 5000 Ada / GeForce RTX 4090";
+
   const moduleCount = 2;
-  const capacityPerModule = Math.ceil(
-    profileSelected.target_required_ram_gb / moduleCount,
-  );
+  const capacityPerModule = Math.ceil(userRamInstalled / moduleCount);
+  const supportedRamTech =
+    workstation.motherboard_expansion.supported_ram_technologies?.[0] ||
+    "DDR5-5600 non-ECC UDIMM";
 
   const diagnosticRequest: DiagnosticRequest = {
     profile: profileSelected.profile as any,
     symptom: profileSelected.symptom_key,
     component_category: profileSelected.component_category,
+
     physicalInput: {
       max_gpu_slots: workstation.physical_constraints.max_gpu_slots,
       max_gpu_length_mm: workstation.physical_constraints.max_gpu_length_mm,
       gpu_slots: profileSelected.target_gpu_slots,
       gpu_length_mm: profileSelected.target_gpu_length_mm,
+      user_gpu_vram_gb: userGpuVram,
+      target_min_vram_gb: targetMinVram,
+      target_gpu_model_name: targetGpuModelName,
     },
 
     powerInput: {
@@ -71,7 +123,6 @@ export async function executeDiagnosticForWorkstation(
 
     pcieSystemSpec: {
       pcie_x16_slots_count: pcieX16Count,
-
       supported_generation: workstation.motherboard_expansion.pcie_slots[0]?.gen
         ? `PCIe ${workstation.motherboard_expansion.pcie_slots[0].gen}.0`
         : "PCIe 4.0",
@@ -85,18 +136,28 @@ export async function executeDiagnosticForWorkstation(
     ramSystemSpec: {
       ram_slots_count: workstation.motherboard_expansion.ram_slots_count,
       max_ram_gb: workstation.motherboard_expansion.max_ram_gb,
-      supported_technologies:
-        workstation.motherboard_expansion.supported_ram_technologies,
+      supported_technologies: workstation.motherboard_expansion
+        .supported_ram_technologies || [supportedRamTech],
     },
 
     ramTargetConfig: {
       module_count: moduleCount,
       capacity_per_module_gb: capacityPerModule,
-      technology: profileSelected.required_generation,
+      technology: supportedRamTech,
       is_ecc: false,
+      required_ram_gb: requiredRam,
+      user_installed_ram_gb: userRamInstalled,
     },
   };
 
   const result = runDiagnosticEngine(diagnosticRequest);
-  return result;
+
+  // Enriquecemos el resultado con la GPU evaluada y la sugerencia de cambio
+  return {
+    ...result,
+    recommendations: {
+      ...result.recommendations,
+      user_gpu_evaluated: userGpuModel,
+    },
+  } as any;
 }

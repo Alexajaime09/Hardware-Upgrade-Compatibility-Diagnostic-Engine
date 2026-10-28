@@ -9,6 +9,8 @@ export interface IOptimizedProfile extends Document {
   gpu_tdp_w: number;
   target_gpu_length_mm: number;
   target_gpu_slots: number;
+  target_min_vram_gb?: number;
+  target_gpu_model_name?: string;
   minimum_form_factor: string;
   required_generation: string;
 }
@@ -22,6 +24,8 @@ const OptimizedProfileSchema = new Schema<IOptimizedProfile>({
   gpu_tdp_w: { type: Number, required: true },
   target_gpu_length_mm: { type: Number, required: true },
   target_gpu_slots: { type: Number, required: true },
+  target_min_vram_gb: { type: Number, required: false },
+  target_gpu_model_name: { type: String, required: false },
   minimum_form_factor: { type: String, required: true },
   required_generation: { type: String, required: true },
 });

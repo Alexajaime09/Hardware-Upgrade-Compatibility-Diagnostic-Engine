@@ -11,6 +11,8 @@ export const seedOptimizedProfiles = async () => {
       gpu_tdp_w: 300,
       target_gpu_length_mm: 300,
       target_gpu_slots: 3,
+      target_min_vram_gb: 16,
+      target_gpu_model_name: "NVIDIA RTX 5000 Ada / GeForce RTX 4090",
       minimum_form_factor: "Tower",
       required_generation: "PCIe 4.0",
     },
@@ -23,6 +25,8 @@ export const seedOptimizedProfiles = async () => {
       gpu_tdp_w: 350,
       target_gpu_length_mm: 320,
       target_gpu_slots: 3,
+      target_min_vram_gb: 24,
+      target_gpu_model_name: "NVIDIA RTX 6000 Ada / GeForce RTX 4090",
       minimum_form_factor: "Tower",
       required_generation: "PCIe 4.0",
     },
@@ -35,6 +39,8 @@ export const seedOptimizedProfiles = async () => {
       gpu_tdp_w: 300,
       target_gpu_length_mm: 300,
       target_gpu_slots: 3,
+      target_min_vram_gb: 16,
+      target_gpu_model_name: "NVIDIA RTX 5000 Ada",
       minimum_form_factor: "Tower",
       required_generation: "PCIe 5.0",
     },
@@ -47,11 +53,23 @@ export const seedOptimizedProfiles = async () => {
       gpu_tdp_w: 250,
       target_gpu_length_mm: 280,
       target_gpu_slots: 2,
+      target_min_vram_gb: 12,
+      target_gpu_model_name: "NVIDIA GeForce RTX 4070 Super / RTX 4500 Ada",
       minimum_form_factor: "Tower",
       required_generation: "PCIe 4.0",
     },
   ];
   await OptimizedProfileModel.deleteMany({ profile: "3D Animation" });
   await OptimizedProfileModel.insertMany(profilesFor3DAnimation);
-  console.log("Optimized profiles for 3D Animation seeded succesfully");
+  console.log("Optimized profiles for 3D Animation seeded successfully");
+  const savedCount = await OptimizedProfileModel.countDocuments({
+    profile: "3D Animation",
+  });
+  const sample = await OptimizedProfileModel.findOne({
+    profile: "3D Animation",
+  });
+  console.log(`Documentos totales en Atlas para 3D Animation: ${savedCount}`);
+  console.log(`Muestra de VRAM guardada:`, sample?.target_min_vram_gb);
+
+  console.log("Optimized profiles for 3D Animation seeded successfully");
 };

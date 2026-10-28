@@ -1,8 +1,7 @@
-import path from "path";
-import fs from "fs";
+// src/seed.ts
 import dotenv from "dotenv";
 import { connectDatabase } from "./config/db";
-import { WorkstationModel } from "./models/HardwareClient";
+import { seedOptimizedProfiles } from "./profileSeed/optimizedProfile.seed";
 
 dotenv.config();
 
@@ -12,28 +11,13 @@ const seedDatabase = async () => {
 
     await connectDatabase(mongoUri);
 
-    const dataDir = path.join(
-      __dirname,
-      "../../data/systems/desktop/lenovo/thinkstation_p3",
-    );
+    // Ejecutamos directamente el seed de perfiles optimizados en MongoDB Atlas
+    await seedOptimizedProfiles();
 
-    const file2023 = JSON.parse(
-      fs.readFileSync(path.join(dataDir, "2023.json"), "utf-8"),
-    );
-    const file2024 = JSON.parse(
-      fs.readFileSync(path.join(dataDir, "2024.json"), "utf-8"),
-    );
-
-    const systemsToSeed = [file2023, file2024];
-
-    await WorkstationModel.deleteMany({});
-    console.log("data base cleaned");
-
-    const insertedDocs = await await WorkstationModel.insertMany(systemsToSeed);
-    console.log(`documents inserted, ${insertedDocs.length}`);
+    console.log("Seed process completed successfully!");
     process.exit(0);
   } catch (error) {
-    console.error("error in charge seeding", error);
+    console.error("Error in charge seeding:", error);
     process.exit(1);
   }
 };

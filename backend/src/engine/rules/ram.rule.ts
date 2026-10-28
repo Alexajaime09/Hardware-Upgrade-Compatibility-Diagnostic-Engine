@@ -1,5 +1,3 @@
-// src/rules/ram.rule.ts
-
 export interface SystemRamSpec {
   ram_slots_count: number;
   max_ram_gb: number;
@@ -11,12 +9,15 @@ export interface TargetRamConfiguration {
   capacity_per_module_gb: number;
   technology: string;
   is_ecc: boolean;
+  required_ram_gb?: number;
+  user_installed_ram_gb?: number;
 }
 
 export interface RamRuleResult {
   is_compatible: boolean;
   total_capacity_gb: number;
   warnings: string[];
+  required_upgrade_gb?: number;
 }
 
 export function validateRamConstraints(
@@ -25,6 +26,16 @@ export function validateRamConstraints(
 ): RamRuleResult {
   const warnings: string[] = [];
   const totalCapacityGb = target.module_count * target.capacity_per_module_gb;
+
+  if (
+    target.user_installed_ram_gb !== undefined &&
+    target.required_ram_gb !== undefined &&
+    target.user_installed_ram_gb < target.required_ram_gb
+  ) {
+    warnings.push(
+      `Current installed RAM (${target.user_installed_ram_gb} GB) is insufficient for this professional profile, which requires at least ${target.required_ram_gb} GB.`,
+    );
+  }
 
   if (target.module_count > system.ram_slots_count) {
     warnings.push(
@@ -54,5 +65,11 @@ export function validateRamConstraints(
     is_compatible: warnings.length === 0,
     total_capacity_gb: totalCapacityGb,
     warnings,
+    required_upgrade_gb:
+      target.user_installed_ram_gb !== undefined &&
+      target.required_ram_gb !== undefined &&
+      target.user_installed_ram_gb < target.required_ram_gb
+        ? target.required_ram_gb
+        : undefined,
   };
 }

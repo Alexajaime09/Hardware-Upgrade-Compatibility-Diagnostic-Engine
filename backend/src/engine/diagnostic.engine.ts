@@ -1,3 +1,4 @@
+//src/engine/diagnostic.engine.ts
 import {
   PhysicalValidationInput,
   validatePhysicalConstrains,
@@ -40,6 +41,7 @@ export interface DiagnosticResult {
     calculated_ram_capacity_gb: number;
     calculated_power_wattage_required?: number;
     required_psu_upgrade_w?: number;
+    gpu_upgrade_suggested?: string; // <-- Nuevo campo para sugerir cambio de GPU
     requires_system_replacement: boolean;
   };
 }
@@ -51,6 +53,9 @@ export function runDiagnosticEngine(
 
   const physicalRes = validatePhysicalConstrains(request.physicalInput);
   if (!physicalRes.is_compatible) {
+    consolidateWarnings.push(...physicalRes.warnings);
+  } else if (physicalRes.warnings.length > 0) {
+    // Si hay advertencias pero es compatible (ej: insuficiencia blanda de GPU)
     consolidateWarnings.push(...physicalRes.warnings);
   }
 
@@ -68,7 +73,7 @@ export function runDiagnosticEngine(
   );
 
   if (!pcieRes.is_compatible) {
-    consolidateWarnings.push(...pcieRes.warnings);
+    consolidateWarnings.push(...perResWarnings(pcieRes.warnings)); // o pcieRes.warnings directamente
   }
 
   const ramRes = validateRamConstraints(
@@ -87,7 +92,10 @@ export function runDiagnosticEngine(
     ramRes.is_compatible;
 
   const requiresReplacement =
-    !physicalRes.is_compatible || !pcieRes.is_compatible;
+    request.physicalInput.gpu_length_mm >
+      request.physicalInput.max_gpu_length_mm ||
+    request.physicalInput.gpu_slots > request.physicalInput.max_gpu_slots ||
+    !pcieRes.is_compatible;
 
   return {
     is_fully_compatible: isFullyCompatible,
@@ -99,7 +107,12 @@ export function runDiagnosticEngine(
       calculated_ram_capacity_gb: ramRes.total_capacity_gb,
       calculated_power_wattage_required: powerRes.calculated_wattage_required,
       required_psu_upgrade_w: powerRes.required_psu_upgrade_w,
+      gpu_upgrade_suggested: physicalRes.gpu_upgrade_suggested,
       requires_system_replacement: requiresReplacement,
     },
   };
+}
+
+function perResWarnings(warnings: string[]) {
+  return warnings;
 }

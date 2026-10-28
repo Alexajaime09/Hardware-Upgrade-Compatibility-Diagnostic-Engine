@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { connectDatabase } from "./config/db";
 import systemsRouter from "./routes/systems";
+import diagnosticRoutes from "./routes/diagnostic.routes";
 dotenv.config();
 
 const app: Application = express();
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/upgradeHardware", systemsRouter);
+app.use("/api/diagnostics", diagnosticRoutes);
 
 const startApp = async () => {
   try {
