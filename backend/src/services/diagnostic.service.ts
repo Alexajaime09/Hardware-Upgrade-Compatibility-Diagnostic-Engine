@@ -15,9 +15,8 @@ export interface UserHardwareConfig {
   storageType?: string;
 }
 
-// Función auxiliar para estimar la VRAM en GB a partir del string del modelo de GPU del usuario
 function estimateUserGpuVram(gpuModelName?: string): number {
-  if (!gpuModelName) return 12; // Valor por defecto seguro
+  if (!gpuModelName) return 12;
   const name = gpuModelName.toUpperCase();
   if (name.includes("4090") || name.includes("3090") || name.includes("6000"))
     return 24;
@@ -34,7 +33,7 @@ function estimateUserGpuVram(gpuModelName?: string): number {
     return 8;
   if (name.includes("A400") || name.includes("T400") || name.includes("W6300"))
     return 4;
-  return 8; // Estándar conservador para gama media-baja
+  return 8;
 }
 
 export async function executeDiagnosticForWorkstation(
@@ -75,18 +74,15 @@ export async function executeDiagnosticForWorkstation(
     (slot) => slot.size === "x16" || slot.lanes === 16,
   ).length;
 
-  // 1. Extraemos y normalizamos la RAM del usuario
   const userRamInstalled = userHardware?.ramGb
     ? Number(userHardware.ramGb)
     : 32;
   const requiredRam = profileSelected.target_required_ram_gb;
 
-  // 2. Extraemos el modelo de GPU del usuario y estimamos su VRAM
   const userGpuModel =
     userHardware?.gpuModel || "NVIDIA GeForce RTX 4060 (8GB)";
   const userGpuVram = estimateUserGpuVram(userGpuModel);
 
-  // 3. Obtenemos los umbrales dinámicamente desde el documento de MongoDB Atlas
   const targetMinVram = profileSelected.target_min_vram_gb || 16;
   const targetGpuModelName =
     profileSelected.target_gpu_model_name ||
@@ -152,7 +148,6 @@ export async function executeDiagnosticForWorkstation(
 
   const result = runDiagnosticEngine(diagnosticRequest);
 
-  // Enriquecemos el resultado con la GPU evaluada y la sugerencia de cambio
   return {
     ...result,
     recommendations: {

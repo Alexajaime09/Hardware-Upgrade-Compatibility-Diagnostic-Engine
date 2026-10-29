@@ -1,4 +1,3 @@
-//src/engine/diagnostic.engine.ts
 import {
   PhysicalValidationInput,
   validatePhysicalConstrains,
@@ -41,7 +40,7 @@ export interface DiagnosticResult {
     calculated_ram_capacity_gb: number;
     calculated_power_wattage_required?: number;
     required_psu_upgrade_w?: number;
-    gpu_upgrade_suggested?: string; // <-- Nuevo campo para sugerir cambio de GPU
+    gpu_upgrade_suggested?: string;
     requires_system_replacement: boolean;
   };
 }
@@ -55,7 +54,6 @@ export function runDiagnosticEngine(
   if (!physicalRes.is_compatible) {
     consolidateWarnings.push(...physicalRes.warnings);
   } else if (physicalRes.warnings.length > 0) {
-    // Si hay advertencias pero es compatible (ej: insuficiencia blanda de GPU)
     consolidateWarnings.push(...physicalRes.warnings);
   }
 
@@ -73,7 +71,7 @@ export function runDiagnosticEngine(
   );
 
   if (!pcieRes.is_compatible) {
-    consolidateWarnings.push(...perResWarnings(pcieRes.warnings)); // o pcieRes.warnings directamente
+    consolidateWarnings.push(...perResWarnings(pcieRes.warnings));
   }
 
   const ramRes = validateRamConstraints(
